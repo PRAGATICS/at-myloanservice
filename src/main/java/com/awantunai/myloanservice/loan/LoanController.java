@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.awantunai.myloanservice.loan.entity.Counter;
-import com.awantunai.myloanservice.loan.entity.CounterRepository;
 import com.awantunai.myloanservice.loan.entity.Loan;
 import com.awantunai.myloanservice.loan.entity.LoanRepository;
 
@@ -32,11 +29,8 @@ public class LoanController {
 
 	private final LoanRepository loanRepository;
 
-	private final CounterRepository counterRepository;
-
-	public LoanController(LoanRepository loanRepository, CounterRepository counterRepository) {
+	public LoanController(LoanRepository loanRepository) {
 		this.loanRepository = loanRepository;
-		this.counterRepository = counterRepository;
 	}
 
 	@RequestMapping(value = "/getloans", method = RequestMethod.GET, produces = "application/json")
