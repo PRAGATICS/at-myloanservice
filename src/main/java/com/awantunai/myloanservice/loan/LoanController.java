@@ -50,9 +50,6 @@ public class LoanController {
 	public Loan createLoan(@RequestBody Loan loan) {
 		System.out.println("-------------------------------");
 		LOG.info("Create Loan.");
-		System.out.println(counterRepository.findAll());
-		Optional<Counter> test = counterRepository.findById("anything");
-		System.out.println("counterDetails - " + test);
 		return loanRepository.save(loan);
 	}
 

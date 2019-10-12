@@ -3,6 +3,7 @@ package com.awantunai.myloanservice.loan.entity;
 import java.time.LocalDate;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
@@ -19,21 +20,30 @@ import lombok.NoArgsConstructor;
 @Builder
 @Document(collection = "loans")
 public class Loan {
+	@Transient
+	public static final String SEQUENCE_NAME = "loan_sequence";
+	@Id
+	private long id;
 
-    @Id
-    private String id;
+	public long getId() {
+		return id;
+	}
 
-    private Double amount;
+	public void setId(long id) {
+		this.id = id;
+	}
 
-    private String status;
+	private Double amount;
 
-    private LocalDate dueDate;
+	private String status;
+
+	private LocalDate dueDate;
 
 	private LocalDate paidDate;
-	
+
 	private float dpd;
 
-    public Double getAmount() {
+	public Double getAmount() {
 		return amount;
 	}
 
