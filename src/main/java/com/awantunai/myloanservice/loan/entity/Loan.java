@@ -72,7 +72,4 @@ public class Loan {
 	public void setDpd(float dpd) {
 		this.dpd = dpd;
 	}
-
-    
-    
 }

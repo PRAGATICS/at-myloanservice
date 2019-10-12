@@ -8,7 +8,7 @@ public class MyloanserviceApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(MyloanserviceApplication.class, args);
-        
+
     }
 
 }
