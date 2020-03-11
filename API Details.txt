@@ -1,0 +1,10 @@
+Api URLs
+
+1. ./loans/getAllLoans
+	To get all loans.
+	
+2. ./loans/createLoan
+	To create a new loan.
+	
+3. ./loans/getPaginatedLoan/{pageIndex}/{pageSize}
+	To get paginated results of the loan on the basis pageIndex and pageSize passed in the URL
